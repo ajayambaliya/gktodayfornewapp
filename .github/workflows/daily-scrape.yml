@@ -1,0 +1,42 @@
+name: Daily GKToday Scrape
+
+on:
+  schedule:
+    - cron: '30 2,6,12 * * *' # 8AM, 12PM, 6PM IST
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run scraper
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          TRANSLATE_TO_GUJARATI: 'true'
+          PAGES_TO_SCRAPE: '3'
+          LOG_LEVEL: 'info'
+          SCRAPE_ON_START: 'true'
+        run: |
+          echo "$GOOGLE_APPLICATION_CREDENTIALS_JSON" > google-creds.json
+          export GOOGLE_APPLICATION_CREDENTIALS=google-creds.json
+          npm run run-once
+        continue-on-error: true

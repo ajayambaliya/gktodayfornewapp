@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0f0f13">
+    <title>એલએન્ડટીએ જાપાન સાથે ગ્રીન એમોનિયા સપ્લાય ડીલ પર હસ્તાક્ષર કર્યા</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f0f13;
+            --ink-2: #2d2d35;
+            --ink-3: #64647a;
+            --paper: #faf9f6;
+            --paper-2: #f0ede8;
+            --accent: #c8410a;
+            --accent-warm: #e8a020;
+            --chip-bg: #fff3e8;
+            --chip-text: #c8410a;
+            --progress: #c8410a;
+            --card: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.13);
+            --r: 20px;
+            --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --ink: #f0ede8;
+                --ink-2: #ccc8be;
+                --ink-3: #888070;
+                --paper: #0f0f13;
+                --paper-2: #1a1a22;
+                --accent: #f06030;
+                --accent-warm: #f0b040;
+                --chip-bg: #2a1800;
+                --chip-text: #f08040;
+                --card: #1a1a22;
+                --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+                --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+                --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
+            }
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Nunito', 'Noto Sans Gujarati', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.85;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Progress bar ── */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; z-index: 200;
+            height: 3px; width: 0%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+            transition: width 0.1s linear;
+            border-radius: 0 2px 2px 0;
+        }
+
+        /* ── Sticky header ── */
+        .top-bar {
+            position: sticky; top: 0; z-index: 100;
+            display: flex; align-items: center; gap: 12px;
+            padding: 14px 20px;
+            background: color-mix(in srgb, var(--paper) 85%, transparent);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+            box-shadow: var(--shadow-sm);
+        }
+        .top-bar .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+            flex: 1;
+        }
+        .top-bar .share-btn {
+            border: none; background: var(--chip-bg);
+            color: var(--chip-text);
+            padding: 8px 16px; border-radius: 99px;
+            font-family: inherit; font-size: 0.85rem; font-weight: 700;
+            cursor: pointer; transition: transform var(--transition), opacity var(--transition);
+            display: flex; align-items: center; gap: 6px;
+        }
+        .top-bar .share-btn:active { transform: scale(0.94); opacity: 0.8; }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            min-height: 320px;
+            background: linear-gradient(160deg, #1a0800 0%, #2d1200 50%, #0f0f13 100%);
+            display: flex; flex-direction: column;
+            justify-content: flex-end;
+            padding: 60px 24px 40px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .hero-glow {
+            position: absolute; top: -100px; right: -100px;
+            width: 350px; height: 350px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(200,65,10,0.4) 0%, transparent 70%);
+            pointer-events: none;
+            filter: blur(40px);
+        }
+        .category-chip {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(200,65,10,0.3);
+            border: 1px solid rgba(200,65,10,0.5);
+            color: #ffb085;
+            padding: 6px 16px; border-radius: 99px;
+            font-size: 0.75rem; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            width: fit-content;
+            backdrop-filter: blur(4px);
+        }
+        .category-chip::before { content: '◈'; color: var(--accent-warm); }
+        .hero h1 {
+            font-family: 'Playfair Display', 'Noto Sans Gujarati', serif;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            font-weight: 900;
+            line-height: 1.2;
+            color: #faf9f6;
+            letter-spacing: -0.015em;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        }
+        .hero-meta {
+            display: flex; align-items: center; gap: 20px;
+            margin-top: 24px;
+            font-size: 0.85rem; color: rgba(250,249,246,0.6);
+            font-weight: 600;
+        }
+        .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+        /* ── Body content ── */
+        .content-wrap {
+            padding: 0 24px 140px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Glass Key Points card */
+        .key-points {
+            margin: 32px 0;
+            background: var(--card);
+            border-radius: var(--r);
+            border: 1px solid color-mix(in srgb, var(--ink) 5%, transparent);
+            border-left: 6px solid var(--accent);
+            padding: 24px 24px 24px 22px;
+            box-shadow: var(--shadow-md);
+            opacity: 0; transform: translateY(20px);
+            animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+        }
+        .key-points h3 {
+            font-size: 0.75rem; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--accent); margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .key-points h3::after { content: ''; flex: 1; height: 1px; background: color-mix(in srgb, var(--accent) 20%, transparent); }
+        .key-points ul { list-style: none; padding: 0; }
+        .key-points li {
+            padding: 10px 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 5%, transparent);
+            font-size: 1rem; color: var(--ink-2);
+            display: flex; align-items: flex-start; gap: 12px;
+            font-weight: 500;
+        }
+        .key-points li:last-child { border-bottom: none; }
+        .key-points li::before { content: '✦'; color: var(--accent); font-size: 0.8rem; margin-top: 4px; flex-shrink: 0; }
+
+        /* Article content */
+        .article-body {
+            margin-top: 32px;
+            opacity: 0; transform: translateY(20px);
+            animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+        }
+        .article-body p {
+            font-size: 1.15rem;
+            color: var(--ink-2);
+            margin-bottom: 1.6em;
+            line-height: 1.9;
+        }
+        .article-body h2, .article-body h3 {
+            font-family: 'Playfair Display', 'Noto Sans Gujarati', serif;
+            color: var(--ink);
+            margin: 2.2em 0 0.8em;
+            letter-spacing: -0.01em;
+            font-weight: 800;
+        }
+        .article-body h2 { font-size: 1.8rem; border-bottom: 2px solid color-mix(in srgb, var(--accent) 15%, transparent); display: inline-block; padding-bottom: 4px; margin-bottom: 1em; }
+        .article-body h3 { font-size: 1.4rem; }
+
+        .article-body blockquote {
+            margin: 40px 0;
+            padding: 28px 28px 28px 24px;
+            background: color-mix(in srgb, var(--accent) 4%, var(--paper));
+            border-left: 4px solid var(--accent);
+            border-radius: 4px var(--r) var(--r) 4px;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--ink);
+            position: relative;
+        }
+        .article-body blockquote::before {
+            content: '"'; position: absolute; top: -10px; left: 15px;
+            font-family: 'Playfair Display', serif; font-size: 4rem;
+            color: color-mix(in srgb, var(--accent) 15%, transparent);
+            line-height: 1;
+        }
+        .article-body blockquote h4 {
+            font-style: normal;
+            font-size: 0.75rem; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            color: var(--accent); margin-bottom: 12px;
+        }
+
+        .article-body ul {
+            padding-left: 0; margin-bottom: 1.6em; list-style: none;
+        }
+        .article-body ul li {
+            padding: 6px 0 6px 28px;
+            position: relative; font-size: 1.1rem; color: var(--ink-2);
+        }
+        .article-body ul li::before {
+            content: '⬥'; position: absolute; left: 4px;
+            color: var(--accent); font-size: 0.9em; top: 8px;
+        }
+        .article-body img {
+            width: 100%; border-radius: var(--r);
+            margin: 32px 0; box-shadow: var(--shadow-lg);
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .article-body img:hover { transform: scale(1.02); }
+
+        /* Divider */
+        .divider {
+            margin: 48px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, color-mix(in srgb, var(--ink) 10%, transparent), transparent);
+        }
+
+        /* Source link card */
+        .source-card {
+            margin-top: 16px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: var(--card);
+            border-radius: var(--r);
+            padding: 20px 24px;
+            box-shadow: var(--shadow-md);
+            text-decoration: none;
+            border: 1px solid color-mix(in srgb, var(--ink) 5%, transparent);
+            transition: all var(--transition);
+        }
+        .source-card:active { transform: scale(0.97); box-shadow: var(--shadow-sm); }
+        .source-card .sc-label { font-size: 0.75rem; color: var(--ink-3); font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; }
+        .source-card .sc-name { font-size: 1.1rem; font-weight: 800; color: var(--accent); margin-top: 4px; }
+        .source-card .sc-arrow {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--chip-bg);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent); font-size: 1.3rem; flex-shrink: 0;
+            transition: transform var(--transition);
+        }
+        .source-card:hover .sc-arrow { transform: translateX(4px) rotate(-45deg); }
+
+        /* ── Bottom Nav ── */
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-around;
+            padding: 12px 16px max(env(safe-area-inset-bottom), 14px);
+            background: color-mix(in srgb, var(--paper) 92%, transparent);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-top: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+            box-shadow: 0 -4px 30px rgba(0,0,0,0.1);
+        }
+        .nav-item {
+            display: flex; flex-direction: column; align-items: center; gap: 4px;
+            flex: 1; padding: 8px 0;
+            font-size: 0.7rem; font-weight: 800; color: var(--ink-3);
+            text-transform: uppercase; letter-spacing: 0.8px;
+            cursor: pointer; border: none; background: none;
+            transition: all var(--transition);
+        }
+        .nav-item.active { color: var(--accent); transform: translateY(-2px); }
+        .nav-item svg { width: 24px; height: 24px; }
+        .nav-pill {
+            position: absolute; bottom: 12px;
+            width: 54px; height: 54px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-warm));
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 6px 20px rgba(200,65,10,0.5);
+            cursor: pointer; border: none;
+            transition: all var(--transition);
+        }
+        .nav-pill:active { transform: scale(0.85); box-shadow: 0 2px 10px rgba(200,65,10,0.3); }
+        .nav-pill svg { width: 24px; height: 24px; color: white; }
+
+        /* Animations */
+        @keyframes rise {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer note */
+        .footer-note {
+            text-align: center;
+            padding: 16px 24px 0;
+            font-size: 0.75rem;
+            color: var(--ink-3);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- Top Bar -->
+<header class="top-bar">
+    <div class="logo">GK Gujarat</div>
+    <button class="share-btn" id="shareBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        શેર કરો
+    </button>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-glow"></div>
+    <div class="category-chip">Current Affairs Today - Latest Current Affairs - 2026-2027</div>
+    <h1>એલએન્ડટીએ જાપાન સાથે ગ્રીન એમોનિયા સપ્લાય ડીલ પર હસ્તાક્ષર કર્યા</h1>
+    <div class="hero-meta">
+        <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="readTime">— min</span>
+        </span>
+        <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            GKToday
+        </span>
+    </div>
+</section>
+
+<!-- Content -->
+<div class="content-wrap">
+
+    <!-- Key Points placeholder — auto-extracted from first <ul> by JS -->
+    <div class="key-points" id="keyPoints" style="display:none">
+        <h3>🔑 મુખ્ય મુદ્દા</h3>
+        <ul id="keyList"></ul>
+    </div>
+
+    <div class="article-body" id="articleBody">
+        <p>Larsen and Toubro (L&T) એ જાપાનના ITOCHU કોર્પોરેશન સાથે 300,000 ટન ગ્રીન એમોનિયાના વાર્ષિક પુરવઠા માટે લાંબા ગાળાના કરાર પર હસ્તાક્ષર કર્યા છે, જે ભારતની સ્વચ્છ ઉર્જા નિકાસની મહત્વાકાંક્ષાઓમાં વધુ એક મોટું પગલું દર્શાવે છે. આ સોદો L&T એનર્જી ગ્રીનટેક દ્વારા કરવામાં આવશે અને ગ્રીન હાઇડ્રોજન અને ગ્રીન એમોનિયા જેવા તેના ડેરિવેટિવ્ઝના વૈશ્વિક સપ્લાયર બનવાની ભારતની વ્યાપક વ્યૂહરચનાનું સમર્થન કરશે.</p> 
+<h4>કરારમાં શું શામેલ છે</h4> 
+<p>કરાર હેઠળ, L&T એનર્જી ગ્રીનટેક ગુજરાતમાં તેની સૂચિત ઉત્પાદન સુવિધામાંથી દર વર્ષે 300,000 ટન ગ્રીન એમોનિયા સપ્લાય કરશે. ગ્રીન એમોનિયાનું ઉત્પાદન ગ્રીન હાઇડ્રોજનનો ઉપયોગ કરીને થાય છે જે નવીનીકરણીય ઉર્જા સ્ત્રોતોમાંથી ઉત્પન્ન થાય છે અને તેને એક મહત્વપૂર્ણ લો-કાર્બન ઇંધણ વિકલ્પ ગણવામાં આવે છે. તે ખાસ કરીને શિપિંગ જેવા ક્ષેત્રો માટે નોંધપાત્ર છે, જ્યાં ડીકાર્બોનાઇઝેશન એક મોટો પડકાર છે.</p> 
+<h4>લીલો એમોનિયા શા માટે મહત્વપૂર્ણ છે</h4> 
+<p>ગ્રીન એમોનિયા વૈશ્વિક દરિયાઈ પરિવહનમાં કાર્બન ઉત્સર્જન ઘટાડવા માટે મુખ્ય બળતણ તરીકે ઉભરી રહ્યું છે. અશ્મિભૂત ઇંધણનો ઉપયોગ કરીને બનાવવામાં આવતા પરંપરાગત એમોનિયાથી વિપરીત, ગ્રીન એમોનિયા કાર્બન-સઘન પ્રક્રિયાઓ વિના ઉત્પન્ન થાય છે. તેનો સીધો ઉપયોગ ક્લીનર દરિયાઈ ઈંધણ તરીકે અથવા વૈશ્વિક ઉર્જા વેપાર માટે હાઈડ્રોજન કેરિયર તરીકે થઈ શકે છે. જાપાન અને દક્ષિણ કોરિયા જેવા દેશો તેમના ચોખ્ખા-શૂન્ય લક્ષ્યોને પૂર્ણ કરવા માટે ગ્રીન એમોનિયાની લાંબા ગાળાની આયાતમાં વધુને વધુ રોકાણ કરી રહ્યાં છે.</p> 
+<h4>જાપાનની વ્યૂહાત્મક સપ્લાય ચેઇન યોજનાઓ</h4> 
+<p>ITOCHU સિંગાપોર અને અન્ય વ્યૂહાત્મક શિપિંગ હબ સહિત મુખ્ય દરિયાઈ વેપાર માર્ગો પર વૈશ્વિક ગ્રીન એમોનિયા સપ્લાય ઇકોસિસ્ટમ બનાવવાનું લક્ષ્ય રાખે છે. ભારતીય ઉત્પાદકો સાથે ભાગીદારી કરીને, જાપાન તેના ઔદ્યોગિક અને શિપિંગ ક્ષેત્રો માટે વિશ્વસનીય લાંબા ગાળાના સ્વચ્છ ઇંધણ પુરવઠાની માંગ કરી રહ્યું છે. આ ઓછા કાર્બન ઇંધણ અને મજબૂત પ્રાદેશિક સ્વચ્છ ઉર્જા સહકાર તરફ વ્યાપક એશિયા-પેસિફિક પરિવર્તનને પ્રતિબિંબિત કરે છે.</p> 
+<blockquote> 
+<h4>પરીક્ષાઓ માટે મહત્વના તથ્યો</h4> 
+<ul> 
+<li>ગ્રીન એમોનિયાનું ઉત્પાદન નવીનીકરણીય ઉર્જા સ્ત્રોતોમાંથી ઉત્પન્ન થયેલ લીલા હાઇડ્રોજનનો ઉપયોગ કરીને કરવામાં આવે છે.</li> 
+<li>એમોનિયા સ્વચ્છ શિપિંગ ઇંધણ અને હાઇડ્રોજન કેરિયર બંને તરીકે કામ કરી શકે છે.</li> 
+<li>ભારતના નેશનલ ગ્રીન હાઇડ્રોજન મિશનનું લક્ષ્ય 2030 સુધીમાં 5 મિલિયન ટન ગ્રીન હાઇડ્રોજનનું ઉત્પાદન કરવાનું છે.</li> 
+<li>ગુજરાત પોર્ટ એક્સેસ અને રિન્યુએબલ એનર્જી ક્ષમતાને કારણે ગ્રીન હાઇડ્રોજન અને એમોનિયા પ્રોજેક્ટ્સ માટે મુખ્ય હબ તરીકે ઉભરી રહ્યું છે.</li> 
+</ul> 
+</blockquote> 
+<h4>ગ્રીન ઇંધણની નિકાસમાં ભારતની વધતી જતી ભૂમિકા</h4> 
+<p>ભારતીય કંપનીઓ જાપાન અને દક્ષિણ કોરિયા જેવા દેશો સાથે ગ્રીન એમોનિયા માટે નિકાસ કરારો વધુને વધુ સુરક્ષિત કરી રહી છે. સરકારનો ધ્યેય 2030 સુધીમાં લગભગ 5 મિલિયન ટન ગ્રીન હાઇડ્રોજન અને સંબંધિત ઉત્પાદનોનું પોલિસી સપોર્ટ અને સબસિડી દ્વારા ઉત્પાદન કરવાનું છે. આ પ્રકારના સોદાઓ વૈશ્વિક સ્વચ્છ ઉર્જા બજારમાં ભારતની સ્થિતિને મજબૂત બનાવે છે જ્યારે ઔદ્યોગિક વૃદ્ધિ, ઊર્જા સંક્રમણ અને નિકાસ સ્પર્ધાત્મકતાને પણ સમર્થન આપે છે.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="source-card">
+        <div>
+            <div class="sc-label">સ્ત્રોત</div>
+            <div class="sc-name">Source :- GKToday</div>
+        </div>
+        <div class="sc-arrow">✓</div>
+    </div>
+
+    <p class="footer-note">&copy; 2026 Gujarat Gov Job Prep • AI Powered</p>
+</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+    <button class="nav-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        હોમ
+    </button>
+    <button class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        શોધ
+    </button>
+    <button class="nav-pill" id="bookmarkBtn" title="Bookmark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+    </button>
+    <button class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        લેખ
+    </button>
+    <button class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        પ્રોફાઇલ
+    </button>
+</nav>
+
+<script>
+    // Reading progress
+    window.addEventListener('scroll', () => {
+        const el = document.documentElement;
+        const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
+        const pb = document.getElementById('progress-bar');
+        if (pb) pb.style.width = pct + '%';
+    }, { passive: true });
+
+    // Reading time
+    (function() {
+        const text = document.getElementById('articleBody')?.innerText || '';
+        const words = text.trim().split(/\s+/).length;
+        const mins = Math.max(1, Math.round(words / 180));
+        const rt = document.getElementById('readTime');
+        if (rt) rt.textContent = mins + ' min વાંચો';
+    })();
+
+    // Auto extract key points from first UL
+    (function() {
+        const body = document.getElementById('articleBody');
+        const ul = body?.querySelector('ul');
+        if (!ul) return;
+        
+        const items = Array.from(ul.querySelectorAll('li')).slice(0, 6);
+        if (items.length < 2) return;
+        
+        const kp = document.getElementById('keyPoints');
+        const kl = document.getElementById('keyList');
+        if (!kp || !kl) return;
+        
+        items.forEach(li => {
+            const el = document.createElement('li');
+            el.textContent = li.textContent.trim();
+            kl.appendChild(el);
+        });
+        kp.style.display = 'block';
+        
+        if (body.firstElementChild === ul || (body.firstElementChild?.tagName === 'H4' && body.children[1] === ul)) {
+            ul.remove();
+            if (body.firstElementChild?.tagName === 'H4') body.firstElementChild.remove();
+        }
+    })();
+
+    // Share
+    const sBtn = document.getElementById('shareBtn');
+    if (sBtn) {
+        sBtn.addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: document.title,
+                        url: window.location.href
+                    });
+                } catch(e) {}
+            } else {
+                navigator.clipboard?.writeText(window.location.href);
+                alert('લિંક કૉપિ થઈ!');
+            }
+        });
+    }
+
+    // Bookmark toggle
+    const bBtn = document.getElementById('bookmarkBtn');
+    if (bBtn) {
+        bBtn.addEventListener('click', function() {
+            const svg = this.querySelector('svg');
+            const saved = svg.getAttribute('fill') === 'white';
+            svg.setAttribute('fill', saved ? 'none' : 'white');
+            this.style.transform = 'scale(0.85)';
+            setTimeout(() => this.style.transform = '', 200);
+        });
+    }
+</script>
+</body>
+</html>
