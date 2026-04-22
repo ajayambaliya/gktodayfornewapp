@@ -17,7 +17,7 @@ export const CONFIG = {
     articleUrl: 'div.post-data h3 a',
     articleTitle: 'div.post-data h3 a',
     articleDate: 'p.home-post-data-meta',
-    articleImage: 'div.featured-image img',
+    articleImage: 'div.featured-image img, img.post-featured-image, img.wp-post-image',
     articleExcerpt: 'div.post-data', // We'll need to parse this carefully
   },
 

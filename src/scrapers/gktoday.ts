@@ -28,7 +28,7 @@ export class GKTodayScraper extends BaseScraper {
           const title = $link.text().trim();
           const articleUrl = $link.attr('href') || '';
           const dateText = $item.find(CONFIG.LISTING.articleDate).text().trim();
-          const $img = $item.find(CONFIG.LISTING.articleImage);
+          const $img = $item.find(CONFIG.LISTING.articleImage).first();
           const imageUrl = $img.attr('src') || $img.attr('data-src') || $img.attr('data-lazy-src') || null;
           
           // Excerpt is text inside post-data but not in h3 or meta
@@ -79,9 +79,13 @@ export class GKTodayScraper extends BaseScraper {
         return {};
       }
 
-      // Extract first image from content if needed as a fallback
+      // Extract first image from content or main container as a fallback
+      // Look for featured image first, then any image in content
+      const featuredImg = main.find('img.post-featured-image, img.wp-post-image').first();
       const firstImg = content.find('img').first();
-      const fallbackImageUrl = firstImg.attr('src') || firstImg.attr('data-src') || firstImg.attr('data-lazy-src') || null;
+      
+      const targetImg = featuredImg.length > 0 ? featuredImg : firstImg;
+      const fallbackImageUrl = targetImg.attr('src') || targetImg.attr('data-src') || targetImg.attr('data-lazy-src') || null;
 
       // Remove unwanted elements
       CONFIG.ARTICLE.toRemove.forEach(selector => {
@@ -98,13 +102,18 @@ export class GKTodayScraper extends BaseScraper {
 
       const category = main.find(CONFIG.ARTICLE.category).first().text().trim();
 
-      return {
+      const result: Partial<RawArticle> = {
         title,
         body,
         tags,
         category,
-        imageUrl: fallbackImageUrl
       };
+
+      if (fallbackImageUrl) {
+        result.imageUrl = fallbackImageUrl;
+      }
+
+      return result;
     } catch (error) {
       logger.error(`[GKToday] Error on article ${url}:`, error);
       return {};
